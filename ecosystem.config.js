@@ -18,7 +18,7 @@ module.exports = {
       path : '/var/www/sige-edu.com',
       "pre-setup": "rm -rf /var/www/sige-edu.com/",
       "post-deploy":
-        "npm install && npm audit fix && npm install react-scripts --save && npm run build && sudo cp -r build/* /var/www/sige-edu.com/"
+        "npm install && npm run build && sudo cp -r build/* /var/www/sige-edu.com/"
     }
   }
 };
