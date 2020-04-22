@@ -58,7 +58,7 @@
     "validator": "10.11.0",
     "react-bootstrap": "^1.0.0",
     "sass": "^1.26.3",
-    "sass-formatter": "^0.4.4",
+    "sass-formatter": "^0.4.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
