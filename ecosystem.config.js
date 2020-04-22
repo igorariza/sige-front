@@ -16,7 +16,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:igorariza/sige-front.git',
       path : '/var/www/sige-edu.com',
-      "pre-setup": "rm -rf /var/www/sige-edu.com/",
+      "pre-setup": "rm -rf /var/www/sige-edu.com/ & mkdir /var/www/sige-edu.com",
       "post-deploy":
         "npm install && npm run build && sudo cp -r build/* /var/www/sige-edu.com/"
     }
