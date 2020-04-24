@@ -11,7 +11,7 @@ module.exports = {
   deploy : {
     production : {
       user : 'ec2-user',
-      host : ['ec2-52-67-246-35.sa-east-1.compute.amazonaws.com'],
+      host : ['ec2-18-230-100-197.sa-east-1.compute.amazonaws.com', '18.230.100.197'],
       key: "~/.ssh/sige.pem",
       ref  : 'origin/master',
       repo : 'git@github.com:igorariza/sige-front.git',
