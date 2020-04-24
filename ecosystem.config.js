@@ -12,7 +12,7 @@ module.exports = {
     production : {
       user : 'ec2-user',
       host : ['18.230.100.197'],
-      key: "~/.ssh/sige.pem",
+      key: "~/.ssh/id_rsa",
       ref  : 'origin/master',
       repo : 'git@github.com:igorariza/sige-front.git',
       path : '/var/www/sige-edu.com',
