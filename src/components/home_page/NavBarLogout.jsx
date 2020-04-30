@@ -11,7 +11,7 @@ const NavBarLogout = (props) => {
           <Col xs={2}>
             <div className="custom-header__brand">
               <img
-                src="https://res.cloudinary.com/duyflkcyn/image/upload/v1578782555/WhatsApp_Image_2020-01-11_at_4-removebg-preview_dzramo.png"
+                src="../assets/img/logo-full-dark.png"
                 alt="Sige"
               />
             </div>
