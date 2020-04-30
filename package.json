@@ -2,7 +2,7 @@
   "name": "zestadmin-react",
   "version": "1.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://sige-edu.now.sh",
   "dependencies": {
     "ajv": "6.10.0",
     "bootstrap": "4.4.1",
@@ -46,7 +46,7 @@
     "react-numeric-input": "2.2.3",
     "react-redux": "^7.2.0",
     "react-router-dom": "5.0.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^2.1.8",
     "react-tagsinput": "3.19.0",
     "react-time-picker": "3.5.1",
     "reactstrap": "8.0.0",
