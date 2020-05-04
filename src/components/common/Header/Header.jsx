@@ -16,13 +16,13 @@ import {
 } from 'reactstrap'
 
 import { Messages, Notifications } from 'components'
-
 import dashboardRoutes from 'routes/university.jsx'
-
+import { connect } from 'react-redux'
 import { messages } from 'variables/topbar.jsx'
 import { notifications } from 'variables/topbar.jsx'
 
 var IMGDIR = process.env.REACT_APP_IMGDIR
+var BASEDIR = process.env.REACT_APP_BASEDIR
 
 const navStyle = {
   backgroundColor: '#1EAEDF',
@@ -33,7 +33,7 @@ const navStyle = {
 // const styleBackSearch = {
 //   backgroundColor: 'white',
 // }
-class Header extends React.Component {
+class HeaderR extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -182,7 +182,12 @@ class Header extends React.Component {
       })
     } else if (this.props.admintype === 'university') {
       this.setState({
-        profilename: 'Henry Gibson',
+        // profilename: 'Henry Gibson',
+        profilename: this.props.user
+          ? this.props.user.lastNameUser ||
+            this.props.user.lastNameUser ||
+            'Henry Gibson'
+          : 'Henry Gibson',
         profileimg: IMGDIR + '/images/profile/profile-university.jpg',
       })
     } else if (this.props.admintype === 'crm') {
@@ -301,15 +306,23 @@ class Header extends React.Component {
                   <span>{this.state.profilename}</span>
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem tag="a">
+                  {/* <DropdownItem tag="a">
                     <i className="i-wrench" href="#!"></i> Configuracion
-                  </DropdownItem>
-                  <DropdownItem tag="a">
+                  </DropdownItem> */}
+                  {/* <DropdownItem
+                    tag="a"
+                    onClick={() => {
+                      // eslint-disable-next-line
+                      this.props.history.push(
+                        BASEDIR + '/university/add-professors'
+                      )
+                    }}
+                  >
                     <i className="i-user" href="#!"></i> Perfil
-                  </DropdownItem>
-                  <DropdownItem tag="a">
+                  </DropdownItem> */}
+                  {/* <DropdownItem tag="a">
                     <i className="i-info" href="#!"></i> Ayuda
-                  </DropdownItem>
+                  </DropdownItem> */}
                   <DropdownItem
                     onClick={() => {
                       localStorage.removeItem('user')
@@ -322,7 +335,7 @@ class Header extends React.Component {
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-              <NavItem>
+              {/* <NavItem>
                 <div className="navbar-toggle chat-toggle">
                   <button
                     type="button"
@@ -334,8 +347,8 @@ class Header extends React.Component {
                     <span className="badge badge-pill badge-primary">9</span>
                   </button>
                 </div>
-              </NavItem>
-              <Dropdown
+              </NavItem> */}
+              {/* <Dropdown
                 nav
                 isOpen={this.state.messagesddOpen}
                 toggle={(e) => this.messagesddToggle(e)}
@@ -346,9 +359,8 @@ class Header extends React.Component {
                   <span className="badge badge-pill badge-primary">3</span>
                 </DropdownToggle>
                 <Messages messages={messages} />
-              </Dropdown>
-
-              <Dropdown
+              </Dropdown> */}
+              {/* <Dropdown
                 nav
                 isOpen={this.state.notificationsddOpen}
                 toggle={(e) => this.notificationsddToggle(e)}
@@ -359,7 +371,8 @@ class Header extends React.Component {
                   <span className="badge badge-pill badge-primary">7</span>
                 </DropdownToggle>
                 <Notifications notifications={notifications} />
-              </Dropdown>
+              </Dropdown */}
+              >
             </Nav>
             <div
               className="screensize"
@@ -372,4 +385,12 @@ class Header extends React.Component {
   }
 }
 
+// export default Header
+
+function mapState(state) {
+  const { user } = state.authentication.user.user_data
+  return { user }
+}
+
+const Header = connect(mapState, {})(HeaderR)
 export default Header
