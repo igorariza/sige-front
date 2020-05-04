@@ -12,7 +12,6 @@ import {
   Form,
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
-// import { history } from '_helpers'
 
 const AlertStyle = {
   margin: '0',
@@ -26,7 +25,6 @@ const LoginForm = (props) => {
     email: '',
     password: '',
   })
-  const [submitted, setSubmitted] = useState(false)
   const { email, password } = inputs
   const loggingIn = useSelector((state) => state.authentication.loggingIn)
   const message = useSelector((state) => state.alert.message)
