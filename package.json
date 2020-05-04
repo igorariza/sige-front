@@ -2,7 +2,7 @@
   "name": "zestadmin-react",
   "version": "1.1.0",
   "private": true,
-  "homepage": "ec2-18-230-100-197.sa-east-1.compute.amazonaws.com",
+  "homepage": "http://www.sige-edu.com",
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
@@ -40,6 +40,7 @@
     "react-draft-wysiwyg": "1.13.2",
     "react-dropzone": "4.2.13",
     "react-google-maps": "9.2.2",
+    "react-hotjar": "^2.2.0",
     "react-input-mask": "2.0.4",
     "react-joyride": "^2.2.1",
     "react-jvectormap": "0.0.7",
