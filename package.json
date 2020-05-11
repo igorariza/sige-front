@@ -2,7 +2,7 @@
   "name": "SIGE",
   "version": "1.0.1",
   "private": true,
-  "homepage": "www.sige-edu.com",
+  "homepage": "http://www.sige-edu.com/home",
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
