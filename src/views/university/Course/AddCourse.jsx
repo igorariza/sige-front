@@ -287,14 +287,41 @@ const AddCourse = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        addLink(enlace, data.codeSecction)
+        console.log('Create Data')
+      })
+      .catch((error) => {
+        console.log(error)
+        alert('Error al crear la seccion, contacta el soporte de SIGE')
+      })
+      .finally(() => {})
+  }
+
+  function addLink(enlace, codeSecction) {
+    fetch(`${config.apiOficial}/secctions/hyperLynks/create/`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        url: enlace,
+        secctionHyperlink: codeSecction,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
         alert('Seccion creada con exito')
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error)
+        alert('Error al crear la seccion, contacta el soporte de SIGE')
+      })
       .finally(() => {})
   }
 
   function editSeccion(body) {
-    console.log('Body: ', body)
+    console.log('Bodys: ', body)
     let { workspaceSecction, codeSecction } = currentSeccion
     body.workspaceSecction = workspaceSecction
     body.codeSecction = codeSecction
@@ -359,7 +386,7 @@ const AddCourse = () => {
       let body = {
         nameSecction: name,
         descriptionSecction: description,
-        // workspaceSecction: selected.sWorkSpace,
+        workspaceSecction: selected.sWorkSpace,
       }
       createSecction(body)
     } else {
@@ -411,7 +438,7 @@ const AddCourse = () => {
                   <div className="form-group col-md-12">
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control form-control-new"
                       id="inputname4"
                       placeholder=""
                       name="name"
@@ -428,6 +455,7 @@ const AddCourse = () => {
                       placeholder="Descripcion de la Actividad"
                       value={description}
                       onChange={handleChange}
+                      className="form-control-new"
                     />
                   </div>
 
@@ -457,12 +485,13 @@ const AddCourse = () => {
                       options={subjects}
                       defaultValue={subjects[0]}
                       onChange={handleChangeSelectMateria}
+                      className="form-control-new"
                     />
                   </div>
                   <div className="form-group col-md-12">
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control form-control-new"
                       id="input4"
                       placeholder=""
                       name="enlace"
@@ -474,7 +503,7 @@ const AddCourse = () => {
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary form-control-new"
                   style={styleButtonSave}
                 >
                   Guardar

@@ -7,9 +7,9 @@ import CourseView from 'views/university/Course/CourseView.jsx'
 import Library from 'views/university/Library/Library.jsx'
 import Professor from 'views/university/Professor/Professor.jsx'
 import AddProfessor from 'views/university/Professor/AddProfessor.jsx'
-import Student from 'views/university/Student/Student.jsx'
-import Centres from 'views/university/Centres/UniversityCentres'
-
+// import Student from 'views/university/Student/Student.jsx'
+// import Centres from 'views/university/Centres/UniversityCentres'
+import Wall from 'views/university/Community/Wall.jsx'
 
 var BASEDIR = process.env.REACT_APP_BASEDIR
 var dashRoutes = [
@@ -20,10 +20,10 @@ var dashRoutes = [
     component: University,
   },
   {
-    path: BASEDIR + '/university/centres',
-    name: 'Clase Virtual',
-    icon: 'social-youtube',
-    component: Centres,
+    path: BASEDIR + '/university/community',
+    name: 'Comunidad',
+    icon: ' fa fa-users',
+    component: Wall,
   },
   // Options Teacher
   {
@@ -37,12 +37,12 @@ var dashRoutes = [
     component: AddProfessor,
     type: 'child',
   },
-  {
-    path: BASEDIR + '/university/students',
-    icon: 'people',
-    name: 'Estudiantes',
-    component: Student,
-  },
+  // {
+  //   path: BASEDIR + '/university/students',
+  //   icon: 'people',
+  //   name: 'Estudiantes',
+  //   component: Student,
+  // },
   {
     path: BASEDIR + '/university/courses',
     icon: 'star',
@@ -67,7 +67,7 @@ var dashRoutes = [
     name: 'Actividad Online',
     component: AddCourse,
   },
- 
+
   {
     path: BASEDIR + '/university/library',
     icon: 'notebook',

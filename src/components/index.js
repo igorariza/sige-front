@@ -11,6 +11,9 @@ import Chatgroups from './common/Chatbar/Chatgroups'
 import Notifications from './common/Notifications/Notifications'
 import Messages from './common/Messages/Messages'
 import Mailbox from './common/Mailbox/Mailbox'
+import Modal from './common/Modal/Modal'
+import CreatePost from './common/Post/Form/CreatePost'
+import Post from './common/Post/Post'
 /*--------------- General Admin Components ------------------*/
 import Messagewidget from './common/Messagewidget/Messagewidget'
 import Navmenudropdown from './common/Navmenudropdown/Navmenudropdown'
@@ -39,10 +42,15 @@ import ContactIcon from './home_page/ContactIcon'
 import NewsCarouselItem from './home_page/NewsCarouselItem'
 import NavBarLogout from './home_page/NavBarLogout'
 import LoginForm from './home_page/LoginForm'
+import LoginFormNew from './home_page/LoginFormNew'
 
 export {
   //Common component
   Messagewidget,
+  Modal,
+  //Post Component
+  Post,
+  CreatePost,
   //PrivateRoute
   PrivateRoute,
   // CardElements
@@ -91,6 +99,7 @@ export {
   NewsCarouselItem,
   NavBarLogout,
   LoginForm,
+  LoginFormNew,
   //Hospital components
   Doctorslist,
   Patientslist,
