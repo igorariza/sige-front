@@ -1,23 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Collapse, Card, CardBody } from 'reactstrap'
 import { makeStyles } from '@material-ui/core/styles'
-import ExpansionPanel from '@material-ui/core/ExpansionPanel'
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
-import Typography from '@material-ui/core/Typography'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-
-var IMGDIR = process.env.REACT_APP_IMGDIR
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-}))
+import Linkify from 'react-linkify'
 
 const ActivityItem = (props) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +15,6 @@ const ActivityItem = (props) => {
     setIsOpen(false)
   }
   const { activity } = props
-  const classes = useStyles()
   const tempImg = [
     'https://images.pexels.com/photos/2170/creative-desk-pens-school.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     'https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
@@ -62,6 +45,18 @@ const ActivityItem = (props) => {
 
     'https://res.cloudinary.com/duyflkcyn/image/upload/v1588575802/SIGE/ActivitiesPhothos/renacimiento_kr9xvo.jpg'
 
+  const auxParseName = (url) => {
+    try {
+      return url.split('/').reverse()[0]
+    } catch (error) {
+      return 'archivo'
+    }
+  }
+  const componentDecorator = (href, text, key) => (
+    <a href={href} key={key} target="_blank">
+      {text}
+    </a>
+  )
   return (
     <div className="col-xl-12">
       <section className="box profile-page">
@@ -98,7 +93,12 @@ const ActivityItem = (props) => {
                   Fecha de Creacion: {activity.uploadOnSecction}
                 </p>
                 <div className="clearfix"></div>
-                <p>{activity.descriptionSecction}</p>
+                <div className="post_content_container-content">
+                  <Linkify componentDecorator={componentDecorator}>
+                    {activity.descriptionSecction}
+                  </Linkify>
+                </div>
+                {/* <p>{activity.descriptionSecction}</p> */}
                 {/* Panel de expancion */}
                 <Button
                   color="primary"
@@ -123,12 +123,22 @@ const ActivityItem = (props) => {
                         className="uprofile-list"
                         // style={{ position: 'absolute', bottom: '0', left: '15px' }}
                       >
-                        <span>
+                        {activity.resources.map((value, key) => {
+                          return (
+                            <span key={key}>
+                              <i className="i-doc"></i>{' '}
+                              <a href={value.resource} target="_blank">
+                                {auxParseName(value.resource)}
+                              </a>
+                            </span>
+                          )
+                        })}
+                        {/* <span>
                           <i className="i-doc"></i> taller.pdf
                         </span>
                         <span>
                           <i className="i-doc"></i> guia_de_apoyo.pdf
-                        </span>
+                        </span> */}
                       </p>
                     </CardBody>
                   </Card>
@@ -142,7 +152,7 @@ const ActivityItem = (props) => {
                       >
                         {activity.lynks.map((value, key) => {
                           return (
-                            <span>
+                            <span key={key}>
                               <i className="i-link"></i>{' '}
                               <a href={value.url} target="_blank">
                                 {value.url}
