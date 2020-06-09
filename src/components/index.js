@@ -31,6 +31,7 @@ import ActivityItem from './university/Activities/ActivityItem'
 import Activity from './university/Activities/Activity'
 import ActivityCarouselItem from './university/Activities/ActivityCarouselItem'
 import AddActivity from './university/Activities/Form/AddActivity'
+import ShowActivity from './university/Activities/Form/ShowActivity'
 
 /*--------------- Hospital Admin Components ------------------*/
 import CoursesStudentList from './hospital/Doctorslist/CoursesStudentList'
@@ -42,6 +43,7 @@ import Carousel from './home_page/Carousel'
 import ClientCarouselItem from './home_page/ClientCarouselItem'
 import ContactIcon from './home_page/ContactIcon'
 import NewsCarouselItem from './home_page/NewsCarouselItem'
+import CarouselCoursesStudent from './home_page/CarouselCoursesStudent'
 import NavBarLogout from './home_page/NavBarLogout'
 import LoginForm from './home_page/LoginForm'
 import LoginFormNew from './home_page/LoginFormNew'
@@ -112,4 +114,5 @@ export {
   ActivityCarouselItem,
   Activity,
   AddActivity,
+  ShowActivity,
 }
