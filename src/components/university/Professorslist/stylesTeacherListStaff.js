@@ -15,7 +15,7 @@ export const Card = styled.div`
   // padding: 0.125rem 0.75rem;
 `;
 export const Center = styled.div`
-${Imgteacherstaff};
+// ${Imgteacherstaff};
 position: absolute;
   top: 50%;
   left: 50%;
