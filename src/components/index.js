@@ -23,6 +23,8 @@ import PrivateRoute from './common/PrivateRoute/PrivateRoute'
 
 /*--------------- University Admin Components ------------------*/
 import Professorslist from './university/Professorslist/Professorslist'
+import ProfessorslistStaff from './university/Professorslist/ProfessorslistStaff'
+import CardTeacher from './university/Professorslist/CardTeacher'
 import Studentslist from './university/Studentslist/Studentslist'
 import UniStaffslist from './university/UniStaffslist/UniStaffslist'
 import Courseslist from './university/Courseslist/Courseslist'
@@ -31,6 +33,8 @@ import ActivityItem from './university/Activities/ActivityItem'
 import Activity from './university/Activities/Activity'
 import ActivityCarouselItem from './university/Activities/ActivityCarouselItem'
 import AddActivity from './university/Activities/Form/AddActivity'
+import AddResponseSection from './university/Sectionstudents/Form/AddResponseSection'
+
 import ShowActivity from './university/Activities/Form/ShowActivity'
 
 /*--------------- Hospital Admin Components ------------------*/
@@ -93,6 +97,8 @@ export {
   Mailbox,
   StyleSettings,
   Professorslist,
+  ProfessorslistStaff,
+  CardTeacher,
   Studentslist,
   UniStaffslist,
   Courseslist,
@@ -115,4 +121,5 @@ export {
   Activity,
   AddActivity,
   ShowActivity,
+  AddResponseSection,
 }
