@@ -14,6 +14,9 @@ export const Card = styled.div`
   position: relative;
   // padding: 0.125rem 0.75rem;
 `;
+export const Imgteacherstaff = styled.div`
+  padding: 0px; 
+`;
 export const Center = styled.div`
 ${Imgteacherstaff};
 position: absolute;
@@ -121,12 +124,6 @@ color: #fff;
   margin-bottom: 0;
 `;
 
-
-
-export const Imgteacherstaff = styled.div`
-  ${fadeIn()}
-  padding: 0px; 
-`;
 
 // export const inicioDiv = styled.div`
 //  display: flex;
